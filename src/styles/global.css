@@ -1,0 +1,96 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --color-bg: #f3f6ff;
+  --color-panel: #ffffff;
+  --color-fg: #141b2d;
+  --color-muted: #516086;
+  --color-accent: #3158ff;
+  --color-line: #d2dcf5;
+  --color-grid: #e4eafd;
+  --color-glow: #dce5ff;
+
+  --radius-card: 0.75rem;
+  --shadow-card: 0 10px 22px rgba(11, 23, 61, 0.08);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-mono);
+    text-rendering: optimizeLegibility;
+  }
+
+  *,
+  *::before,
+  *::after {
+    font-family: inherit;
+  }
+}
+
+.code-bg {
+  background-image:
+    linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px),
+    radial-gradient(circle at 100% 0%, var(--color-glow), transparent 42%);
+  background-size: 24px 24px, 24px 24px, auto;
+}
+
+.theme-cobalt {
+  --color-bg: #f3f6ff;
+  --color-panel: #ffffff;
+  --color-fg: #141b2d;
+  --color-muted: #516086;
+  --color-accent: #3158ff;
+  --color-line: #d2dcf5;
+  --color-grid: #e4eafd;
+  --color-glow: #dce5ff;
+  --shadow-card: 0 10px 22px rgba(11, 23, 61, 0.08);
+}
+
+.theme-bw {
+  --color-bg: #ffffff;
+  --color-panel: #ffffff;
+  --color-fg: #111111;
+  --color-muted: #4f4f4f;
+  --color-accent: #111111;
+  --color-line: #d8d8d8;
+  --color-grid: #ececec;
+  --color-glow: #f7f7f7;
+  --shadow-card: 0 10px 22px rgba(17, 17, 17, 0.06);
+}
+
+.theme-cobalt-dark {
+  color-scheme: dark;
+  --color-bg: #0d1424;
+  --color-panel: #121c33;
+  --color-fg: #e8efff;
+  --color-muted: #8ea0c4;
+  --color-accent: #7da2ff;
+  --color-line: #263252;
+  --color-grid: #1b2947;
+  --color-glow: rgba(52, 90, 193, 0.25);
+  --shadow-card: 0 12px 24px rgba(4, 7, 16, 0.5);
+}
+
+.theme-bw-dark {
+  color-scheme: dark;
+  --color-bg: #0b0b0b;
+  --color-panel: #121212;
+  --color-fg: #f2f2f2;
+  --color-muted: #b0b0b0;
+  --color-accent: #f2f2f2;
+  --color-line: #2e2e2e;
+  --color-grid: #1f1f1f;
+  --color-glow: rgba(75, 75, 75, 0.25);
+  --shadow-card: 0 12px 24px rgba(0, 0, 0, 0.45);
+}
