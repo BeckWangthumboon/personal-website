@@ -36,7 +36,7 @@ const contacts = [
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Beck Wangthumboon</title>
+    <title>Beck's Projects</title>
   </head>
   <body class="theme-cobalt-dark code-bg bg-bg text-fg">
     <main
@@ -46,12 +46,15 @@ const contacts = [
         <h1 class="mt-3 text-4xl tracking-tight sm:text-5xl">
           Beck Wangthumboon
         </h1>
+        <p class="pt-5 text-base tracking-wide text-muted">
+          // building tools for agents
+        </p>
       </header>
 
       <section class="flex-1">
         <ul class="space-y-3">
           {
-            projects.map((project, index) => (
+            projects.map((project) => (
               <li>
                 <a
                   href={project.href}
