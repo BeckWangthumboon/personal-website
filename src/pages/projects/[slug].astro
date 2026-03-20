@@ -1,0 +1,63 @@
+---
+import { getCollection, render } from "astro:content";
+import Github from "lucide-astro/Github";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects", ({ data }) => !data.draft);
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<SiteLayout
+  title={`${project.data.title} | Beck Wangthumboon`}
+  description={project.data.summary}
+>
+  <header class="mb-8">
+    <a href="/" class="text-sm text-muted transition hover:text-accent">
+      &larr; back
+    </a>
+    <h1 class="mt-4 text-4xl tracking-tight sm:text-5xl">
+      {project.data.title}
+    </h1>
+    <p class="mt-4 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
+      {project.data.summary}
+    </p>
+    {
+      project.data.repoUrl && (
+        <a
+          href={project.data.repoUrl}
+          aria-label={`Open ${project.data.title} repository on GitHub`}
+          class="mt-5 inline-flex items-center gap-2 rounded-card border border-line bg-panel px-4 py-2 text-sm shadow-card transition hover:-translate-y-0.5 hover:border-accent"
+        >
+          <Github aria-hidden="true" class="size-4" />
+        </a>
+      )
+    }
+  </header>
+
+  {
+    project.data.coverImage && (
+      <figure class="mb-8 overflow-hidden rounded-card border border-line bg-panel shadow-card">
+        <img
+          src={project.data.coverImage}
+          alt={`${project.data.title} cover image`}
+          class="h-auto w-full object-cover"
+        />
+      </figure>
+    )
+  }
+
+  <article
+    class="flex-1 text-[0.98rem] leading-8 text-fg [&>*+*]:mt-5 [&_a]:text-accent [&_code]:rounded-[0.35rem] [&_code]:border [&_code]:border-line [&_code]:bg-panel [&_code]:px-[0.35rem] [&_code]:py-[0.1rem] [&_h2]:mb-3 [&_h2]:mt-9 [&_h2]:text-2xl [&_h2]:leading-tight [&_h2]:tracking-[-0.02em] [&_h3]:mb-3 [&_h3]:mt-9 [&_h3]:text-[1.2rem] [&_h3]:leading-tight [&_h3]:tracking-[-0.02em] [&_li]:text-muted [&_li::marker]:text-muted [&_p]:text-muted [&_ul]:list-disc [&_ul]:pl-5"
+  >
+    <Content />
+  </article>
+</SiteLayout>
