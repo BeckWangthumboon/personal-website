@@ -6,7 +6,7 @@ repoUrl: "https://github.com/BeckWangthumboon/saas-template"
 coverImage: "https://assets.beckw.dev/projects/saas-template.png"
 ---
 
-## Projecst Intro
+## Project Intro
 
 This project is an opinionated starter template for building SaaS quickly.
 After rebuilding auth and other stuff over and over for different projects last year, I decided to make a template so I wouldn't have to build from scratch again. This project serves as a starting point for b2b SaaS or reference code for good patterns with Convex, etc.
