@@ -3,6 +3,17 @@ import { getCollection, render } from "astro:content";
 import Github from "lucide-astro/Github";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 
+const GITHUB_LINK = "https://github.com/BeckWangthumboon";
+const LINKEDIN_LINK =
+  "https://www.linkedin.com/in/paripon-beck-wangthumboon-34b9ba293";
+const X_LINK = "https://x.com/beckthemaster";
+
+const contacts = [
+  { label: "GitHub", href: GITHUB_LINK },
+  { label: "LinkedIn", href: LINKEDIN_LINK },
+  { label: "X", href: X_LINK },
+];
+
 export async function getStaticPaths() {
   const projects = await getCollection("projects", ({ data }) => !data.draft);
 
@@ -19,6 +30,7 @@ const { Content } = await render(project);
 <SiteLayout
   title={`${project.data.title} | Beck Wangthumboon`}
   description={project.data.summary}
+  mainClass="max-w-4xl px-5 sm:px-8"
 >
   <header class="mb-12">
     <a
@@ -71,11 +83,19 @@ const { Content } = await render(project);
   </article>
 
   <footer class="mt-16 border-t border-line pt-8">
-    <a
-      href="/"
-      class="text-xs font-medium uppercase tracking-[0.25em] text-muted transition hover:text-accent"
-    >
-      &larr; All projects
-    </a>
+    <ul class="flex gap-x-8 text-xs uppercase tracking-[0.2em]">
+      {
+        contacts.map((contact) => (
+          <li>
+            <a
+              href={contact.href}
+              class="text-muted transition hover:text-accent"
+            >
+              {contact.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </footer>
 </SiteLayout>

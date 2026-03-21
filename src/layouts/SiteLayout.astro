@@ -4,9 +4,10 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  mainClass?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, mainClass } = Astro.props;
 ---
 
 <html lang="en">
@@ -28,7 +29,9 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <main
-      class="mx-auto flex min-h-screen w-full max-w-3xl flex-col px-6 py-10 sm:px-10"
+      class={`mx-auto flex min-h-screen w-full flex-col py-10 ${
+        mainClass ?? "max-w-3xl px-6 sm:px-10"
+      }`}
     >
       <slot />
     </main>
