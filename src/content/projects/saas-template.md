@@ -3,6 +3,7 @@ title: "SaaS Template"
 summary: "An opinionated SaaS starter template with core app features like auth, billing, so you can launch faster."
 sortOrder: 1
 repoUrl: "https://github.com/BeckWangthumboon/saas-template"
+coverImage: "https://assets.beckw.dev/projects/saas-template.png"
 ---
 
 ## Projecst Intro

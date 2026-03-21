@@ -120,3 +120,7 @@
   background: transparent;
   padding: 0;
 }
+
+.project-photo-main {
+  max-height: 34rem;
+}

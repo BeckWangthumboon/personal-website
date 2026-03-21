@@ -45,13 +45,16 @@ const { Content } = await render(project);
 
   {
     project.data.coverImage && (
-      <figure class="mb-8 overflow-hidden rounded-card border border-line bg-panel shadow-card">
-        <img
-          src={project.data.coverImage}
-          alt={`${project.data.title} cover image`}
-          class="h-auto w-full object-cover"
-        />
-      </figure>
+      <section class="mb-8">
+        <figure class="overflow-hidden rounded-card border border-line bg-panel shadow-card">
+          <img
+            src={project.data.coverImage}
+            alt={`${project.data.title} cover image`}
+            class="project-photo-main h-auto w-full object-cover"
+            loading="eager"
+          />
+        </figure>
+      </section>
     )
   }
 
