@@ -27,49 +27,63 @@ const contacts = [
   title="Beck's Projects"
   description="Projects and experiments by Beck Wangthumboon"
 >
-  <header class="mb-10">
-    <h1 class="mt-3 text-4xl tracking-tight sm:text-5xl">Beck Wangthumboon</h1>
-    <p class="pt-5 text-base tracking-wide text-muted">
-      // building tools for agents
+  <header class="mb-16">
+    <p
+      class="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-muted"
+    >
+      Portfolio
+    </p>
+    <h1
+      class="text-5xl leading-tight tracking-tight sm:text-6xl"
+>
+      Beck Wangthumboon
+    </h1>
+    <p class="mt-5 text-base tracking-wide text-muted">
+      I like building things
     </p>
   </header>
 
   <section class="flex-1">
-    <ul class="space-y-3">
+    <div>
       {
         projects.map((project) => (
-          <li>
-            <a
-              href={`/projects/${project.slug}`}
-              class="group block rounded-card border border-line bg-panel px-5 py-4 shadow-card transition hover:-translate-y-0.5 hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-            >
-              <h2 class="text-xl">{project.data.title}</h2>
-              <p class="mt-2 text-sm leading-relaxed text-muted">
-                {project.data.summary}
-              </p>
-              <p class="mt-4 text-xs uppercase tracking-[0.22em] text-accent">
-                Read project
-              </p>
-            </a>
-          </li>
+          <a
+            href={`/projects/${project.slug}`}
+            class="group block py-8 transition"
+          >
+            <h2
+              class="text-2xl tracking-tight transition group-hover:text-accent sm:text-3xl"
+                >
+              {project.data.title}
+            </h2>
+            <p class="mt-3 text-sm leading-relaxed text-muted">
+              {project.data.summary}
+            </p>
+            <p class="mt-4 text-xs font-medium uppercase tracking-[0.25em] text-accent opacity-0 transition group-hover:opacity-100">
+              Read more
+            </p>
+          </a>
         ))
       }
-    </ul>
+    </div>
 
     <a
       href={LINKEDIN_LINK}
-      class="mt-6 block rounded-card border border-line bg-panel px-5 py-4 text-sm text-muted shadow-card transition hover:-translate-y-0.5 hover:border-accent hover:text-fg"
+      class="mt-12 inline-block border-b border-accent pb-1 text-sm text-muted transition hover:text-accent"
     >
-      Like my work? Hire me ->
+      Like my work? Hire me &rarr;
     </a>
   </section>
 
-  <footer class="mt-12 border-t border-line pt-6">
-    <ul class="flex flex-wrap gap-x-5 gap-y-3 text-sm">
+  <footer class="mt-20 border-t border-line pt-8">
+    <ul class="flex gap-x-8 text-xs uppercase tracking-[0.2em]">
       {
         contacts.map((contact) => (
           <li>
-            <a href={contact.href} class="text-muted hover:text-accent">
+            <a
+              href={contact.href}
+              class="text-muted transition hover:text-accent"
+            >
               {contact.label}
             </a>
           </li>
