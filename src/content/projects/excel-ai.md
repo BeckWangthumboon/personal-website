@@ -1,6 +1,6 @@
 ---
 title: "AI Spreadsheets"
-summary: "My attempt at Cursor for Excel"
+summary: "Cursor for Excel"
 sortOrder: 999
 repoUrl: "https://github.com/BeckWangthumboon/excel-extension"
 ---
