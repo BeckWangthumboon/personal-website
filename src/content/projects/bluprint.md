@@ -2,6 +2,7 @@
 title: "Bluprint"
 summary: "My attempt at Ralph Loop + Spec Driven Development Hybrid"
 sortOrder: 2
+repoUrl: "https://github.com/BeckWangthumboon/bluprint"
 ---
 
 ## Project Intro
